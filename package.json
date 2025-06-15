@@ -1,0 +1,30 @@
+{
+  "name": "aireelia-blog",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest"
+  },
+  "dependencies": {
+    "@devui-design/icons": "^1.4.0",
+    "animate.css": "^4.1.1",
+    "devui-theme": "^0.0.7",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-devui": "^1.6.32",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^26.0.0",
+    "sass-embedded": "^1.89.2",
+    "vite": "^6.3.5",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vitest": "^3.1.1"
+  }
+}
