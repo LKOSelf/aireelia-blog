@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const ani = "animate__animated"
 
 // 打字机效果相关变量
 const textLines = [
@@ -102,10 +103,10 @@ onMounted(() => {
     </div>
     <div class="content">
       <h1 style="font-size: 5vw;">Aireelia</h1>
-      <h2>学无止境</h2>
+      <h2 style="font-size: 2vw;" :class="[ani, 'animate__rotateIn']">学无止境</h2>
       <p class="typing-text" :class="{ 'typing-complete': typingComplete }" v-html="displayedText"></p>
-      <div style="position: fixed; bottom: 40px; left: 0; right: 0; text-align: center;" class="animate__animated animate__backInUp">
-        <p style="margin-bottom: 20px;">滚动滑轮进入博客首页</p>
+      <div style="position: fixed; bottom: 40px; left: 0; right: 0; text-align: center;" >
+        <p style="margin-bottom: 20px;" :class="[ani, 'animate__backInUp']">滚动滑轮进入博客首页</p>
         <i class="icon-chevron-down-2 bounce-arrow" style="font-size: 50px;"></i>
       </div>
       <div class="scroll-indicator">

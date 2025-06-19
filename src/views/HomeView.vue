@@ -3,9 +3,10 @@
 </script>
 
 <template>
+  <d-row >
+    <d-col :span="8">
+      这是一个卡片
+    </d-col>
  
-  <main>
-    <TheWelcome />
-  </main>
-  <footer></footer>
+  </d-row>
 </template>
