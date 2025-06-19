@@ -1,12 +1,45 @@
-@import '@devui-design/icons/icomoon/devui-icon.css'; ;// 引入图标
+@import '@devui-design/icons/icomoon/devui-icon.css'; // 引入图标
+@import 'devui-theme/styles-var/devui-var.scss'; // 引入主题变量
 
+
+:root {
+
+}
+
+#app {
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+
+}
 
 body {
   background-image: linear-gradient(to right top, #fff5ff, #fff3fe, #fff0fc, #ffeefb, #ffebf9, #ffe9f5, #ffe6f1, #ffe4ed, #ffe1e5, #ffe0dc, #ffdfd3, #ffdfca);
 }
 
-.navbar {
-  border-radius: 12px;
-  background: transparent;
-  text-align: center;
+
+// 卡片样式
+.card {
+  border-radius: $devui-border-radius;
+  box-shadow: $devui-shadow-length-base $devui-shadow;
+  p {
+    font-size: $devui-font-size;
+  }
+}
+
+.card-large {
+  border-radius: $devui-border-radius-card;
+  box-shadow: $devui-shadow-length-feedback-overlay $devui-feedback-overlay-shadow;
+}
+
+.card-full {
+  border-radius: $devui-border-radius-full;
+}
+
+.shadow {
+  box-shadow: $devui-shadow-length-base;
+}
+
+.shadow-left {
+  box-shadow: $devui-shadow-length-slide-left $devui-shadow;
 }

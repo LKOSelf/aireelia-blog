@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LandingPage from '../views/LandingPage.vue'
+import 'animate.css' // 引入动画库
 
 import '../styles/index.scss' // 引入全局样式
 
