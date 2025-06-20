@@ -41,5 +41,6 @@
   text-align: center;
   max-width: 500px;
   border-radius: 0 0 10px 10px;
+  
 }
 </style>
