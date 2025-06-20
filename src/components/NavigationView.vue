@@ -1,7 +1,7 @@
 <template>
     <d-menu mode="horizontal" class="nav">
     <!--logo-->
-    <img class="logo-devui" src="https://devui.design/components/assets/logo.svg" alt="" />
+    <img class="logo-devui" style="width: 14px;" src="/public/aireelia_blue_logo.png" alt="" />
     <!--menu-->
     <d-menu-item key="/">
       <template #icon>

@@ -24,7 +24,7 @@ watch(
 
 <template>
   <d-layout>
-    <d-header>  
+    <d-header class="header">  
       <Transition >
       <NavigationView />
       </Transition>
