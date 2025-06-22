@@ -1,4 +1,4 @@
-import './assets/main.css'
+import '../src/styles/index.scss' // 引入全局样式
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -9,6 +9,7 @@ import '@devui-design/icons/icomoon/devui-icon.css';
 import { ThemeServiceInit, infinityTheme } from 'devui-theme';
 ThemeServiceInit({ infinityTheme }, 'infinityTheme');
 
+// 引入动画库
 import 'animate.css';
 
 import App from './App.vue'

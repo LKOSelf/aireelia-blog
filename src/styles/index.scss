@@ -1,25 +1,29 @@
 @import '@devui-design/icons/icomoon/devui-icon.css'; // 引入图标
 @import 'devui-theme/styles-var/devui-var.scss'; // 引入主题变量
+@import 'base.scss';
 
-
-:root {
-
-}
 
 #app {
+  margin: 0px;
+  padding: 0px;
   height: 100vh;
-  width: 80vw;
-  margin: 0 auto;
-  grid-template-columns:1fr;
+
 }
 
 //头部样式
 .header{
-  margin: 0 auto;
+  padding-top: 50px;
 }
 
+.dcontent{
+  
+}
+// 全局样式
 body {
-  background-image: linear-gradient(to right top, #fff5ff, #fff3fe, #fff0fc, #ffeefb, #ffebf9, #ffe9f5, #ffe6f1, #ffe4ed, #ffe1e5, #ffe0dc, #ffdfd3, #ffdfca);
+  font-family: var(--var-font-family) !important;
+  background-color: #f5f5f0;
+  background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+  color: var(--var-color-text);
 }
 
 
