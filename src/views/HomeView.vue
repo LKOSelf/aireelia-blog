@@ -3,33 +3,40 @@
 </script>
 
 <template>
+  <img src="/src/assets/fv.webp" alt="" class="back-img">
     <d-row class="docs-devui-row">
-      <d-col :span="20">
-        <img src="/src/assets/fv.webp" alt="" style="width: 60vw; height: auto; position: relative; left: 20%;">
-      </d-col>
-      <d-col :span="4">
-        <img src="/src/assets/scroll_1.gif" alt="" style="width: 15vw;height: auto;position: relative;top: 90%;">
+      <d-col :span="24">
+        <p style="height: 25vh;"></p>
       </d-col>
   </d-row>
-  
   <div class="rolling">Welcome to my blog！</div>
 </template>
 
 <style scoped>
 .rolling {
   animation-name: rolling;
-  animation-duration: 10s;
+  animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   font-family: var(--var-font-art);
-  font-size: 50px;
+  font-size: 80px;
   opacity: 0.5;
-  z-index: -1; 
-  display: none;
+  will-change: transform;
+}
+.back-img{
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 @keyframes rolling {
   0% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(100%);
