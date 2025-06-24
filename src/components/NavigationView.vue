@@ -1,25 +1,24 @@
 <template>
-    <d-menu mode="horizontal" class="nav">
-    <d-menu-item key="/feedback"> 
+  <d-menu mode="horizontal" class="nav" router>
+    <d-search class="mt-0 mb-2" style="width: 200px" is-keyup-search :delay="1000" @search="onSearch"></d-search>
+    <d-menu-item key="/tags"> 
       <template #icon>
-        <i class="icon-bug"></i>
-      </template>
-      反馈 </d-menu-item>
-      <d-menu-item key="/tags"> 
-       <template #icon>
         <i class="icon-tag"></i>
       </template>
-      标签 </d-menu-item>
+      标签
+    </d-menu-item>
     <d-menu-item key="/note"> 
-       <template #icon>
+      <template #icon>
         <i class="icon-edit-3"></i>
       </template>
-      笔记 </d-menu-item>
+      笔记
+    </d-menu-item>
     <d-menu-item key="/blog"> 
-       <template #icon>
+      <template #icon>
         <i class="icon-book"></i>
       </template>
-      博客 </d-menu-item>
+      博客
+    </d-menu-item>
     <d-menu-item key="/">
       <template #icon>
         <i class="icon-homepage"></i> 
@@ -27,17 +26,11 @@
       主页
     </d-menu-item>
     <div style="flex: 100px;text-align: left; z-index: 10;">AIREELIA</div>
-    </d-menu>
+  </d-menu>
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
 
-const router = useRouter();
-
-const handleMenuSelect = (key) => {
-  router.push(key);
-};
 </script>
 
 <style scoped>
