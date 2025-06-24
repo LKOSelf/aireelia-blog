@@ -22,11 +22,11 @@
       博客 </d-menu-item>
     <d-menu-item key="/">
       <template #icon>
-        <i class="icon-homepage"></i>
+        <i class="icon-homepage"></i> 
       </template>
       主页
     </d-menu-item>
-    <div style="flex: 100px;text-align: left;">AIREELIA</div>
+    <div style="flex: 100px;text-align: left; z-index: 10;">AIREELIA</div>
     </d-menu>
 </template>
 

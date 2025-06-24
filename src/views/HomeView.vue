@@ -4,12 +4,13 @@
 
 <template>
   <img src="/src/assets/fv.webp" alt="" class="back-img">
-    <d-row class="docs-devui-row">
+  <d-row class="docs-devui-row">
       <d-col :span="24">
         <p style="height: 25vh;"></p>
       </d-col>
   </d-row>
   <div class="rolling">Welcome to my blog！</div>
+  <img src="/src/assets/scroll_1.gif" alt="" style="position: absolute;right: 0%;bottom: 0%;">
 </template>
 
 <style scoped>
@@ -24,15 +25,16 @@
   will-change: transform;
 }
 .back-img{
-  position: fixed;
+  position: absolute;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 88%;
+  max-height: 88%;
   width: auto;
   height: auto;
   object-fit: contain;
+  z-index: -1;
 }
 @keyframes rolling {
   0% {
