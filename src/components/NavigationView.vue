@@ -1,6 +1,15 @@
 <template>
   <d-menu mode="horizontal" class="nav" router>
-    <d-search class="mt-0 mb-2" style="width: 200px" is-keyup-search :delay="1000" @search="onSearch"></d-search>
+    <div class="search-area" @mouseenter="showSearch = true" @mouseleave="showSearch = false" style="display:inline-block;vertical-align:middle;">
+      <template v-if="showSearch">
+        <d-search icon-position="left" no-border style="width: 200px" autofocus />
+      </template>
+      <template v-else>
+        <button class="search-icon-btn" style="background:none;border:none;cursor:pointer;margin-right:10px;">
+          <i class="icon-search"></i>
+        </button>
+      </template>
+    </div>
     <d-menu-item key="/tags"> 
       <template #icon>
         <i class="icon-tag"></i>
@@ -30,7 +39,8 @@
 </template>
 
 <script setup>
-
+import { ref } from 'vue'
+const showSearch = ref(false)
 </script>
 
 <style scoped>
@@ -42,7 +52,16 @@
   background-color: transparent;
   flex-direction: row-reverse; 
 }
-.logo {
-  
+.search-icon-btn {
+  position: relative;
+  font-size: 22px;
+  vertical-align: middle;
+  outline: none;
+  top: -10px;
+}
+.search-area {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
 }
 </style>
