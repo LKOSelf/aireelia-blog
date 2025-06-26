@@ -3,32 +3,36 @@
 @import 'base.scss';
 
 
+// 全局样式
 #app {
   margin: 0px;
   padding: 0px;
   height: 100vh;
-
-}
-
-//头部样式
-.header{
-  padding-top: 50px;
-}
-
-.dcontent{
-  
-}
-// 全局样式
-body {
   font-family: var(--var-font-family) !important;
   background-color: #f5f5f0;
   background-image: url('/src/assets/rice-paper.png');
   color: var(--var-color-text);
 }
 
+//头部样式
+.dheader{
+  padding-top: 50px;
+  flex: 1;
+}
+
+// 主体样式
+.dcontent{
+  flex: 10;
+}
+
+// 底部样式
+.dfooter{
+  flex: 1;
+}
 
 // 卡片样式
 .card {
+  background-color: aqua;
   border-radius: $devui-border-radius;
   box-shadow: $devui-shadow-length-base $devui-shadow;
   p {

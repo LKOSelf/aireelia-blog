@@ -24,13 +24,13 @@ watch(
 
 <template>
   <d-layout>
-    <d-header class="header" style="flex: 1;">
+    <d-header class="dheader">
       <NavigationView />
     </d-header>
-    <d-content class="dcontent" style="flex: 10;">    
+    <d-content class="dcontent">    
       <RouterView>
       </RouterView>
     </d-content>
-    <d-footer class="dfooter" style="flex: 1;">Footer</d-footer>
+    <d-footer class="dfooter">Footer</d-footer>
   </d-layout>
 </template>

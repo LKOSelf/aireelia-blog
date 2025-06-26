@@ -34,7 +34,6 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  z-index: -1;
 }
 @keyframes rolling {
   0% {
