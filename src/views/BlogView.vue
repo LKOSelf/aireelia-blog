@@ -1,14 +1,15 @@
 <template>
+  <main>
   <d-row :wrap="true" :gutter="10">
     <d-col :span="24" class="card" v-for="name in blogList" :key="name">
-      <h1>{{ name }}</h1>
+      <h1 style="border-bottom: 2px solid;"><img src="/public/图钉.svg" height="26px"></img>{{ name }}</h1>
       <p>这里是 {{ name }} 的简介。</p>
     </d-col>
   </d-row>
+  </main>
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Row } from 'vue-devui'
 const blogList = ref([])
 
 onMounted(async () => {
@@ -17,5 +18,9 @@ onMounted(async () => {
 })
 </script>
 <style scoped>
-
+ 
+ main{
+  width: 30vw;
+  margin: 0 auto;
+ }
 </style>

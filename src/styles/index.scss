@@ -32,8 +32,10 @@
 
 // 卡片样式
 .card {
-  background-color: aqua;
-  border-radius: $devui-border-radius;
+  border:  solid 1px;
+  background-color: 	rgb(191, 191, 186, 0.5);
+  border-radius: $devui-border-radius-card;
+  height: 20vh;
   box-shadow: $devui-shadow-length-base $devui-shadow;
   p {
     font-size: $devui-font-size;
@@ -41,7 +43,6 @@
 }
 
 .card-large {
-  border-radius: $devui-border-radius-card;
   box-shadow: $devui-shadow-length-feedback-overlay $devui-feedback-overlay-shadow;
 }
 
