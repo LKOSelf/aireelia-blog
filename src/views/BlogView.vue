@@ -1,8 +1,11 @@
 <template>
   <main>
   <d-row :wrap="true" :gutter="10">
-    <d-col :span="24" class="card" v-for="name in blogList" :key="name">
-      <h1 style="border-bottom: 2px solid;"><img src="/public/图钉.svg" height="26px"></img>{{ name }}</h1>
+    <d-col :span="24" class="card animate__bounceIn" v-for="name in blogList" :key="name">
+      <h1>
+        <img src="/public/icon-park--pin.svg" height="26px"></img>
+        {{ name }}
+      </h1>
       <p>这里是 {{ name }} 的简介。</p>
     </d-col>
   </d-row>
@@ -23,4 +26,12 @@ onMounted(async () => {
   width: 30vw;
   margin: 0 auto;
  }
+ 
+h1{
+  border-bottom: 2px solid;
+}
+
+img{
+  transform: scaleX(-1);
+}
 </style>
