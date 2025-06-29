@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "predev": "node ./src/scripts/fs.js",
-    "prebuild": "node ./src/scripts/fs.js",
+    "predev": "node ./src/components/scripts/fs.js",
+    "prebuild": "node ./src/components/scripts/fs.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",

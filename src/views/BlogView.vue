@@ -1,5 +1,6 @@
 <template>
 <main>
+  <TagView />
   <d-row :wrap="true">
     <d-col :span="24" v-for="item in blogList" :key="item">
       <d-card class="card animate__bounceIn" @click="() => { console.log(name) }" style="cursor: pointer;">
@@ -20,6 +21,7 @@
 </main>
 </template>
 <script setup>
+import TagView from '@/components/TagView.vue'
 import { ref, onMounted } from 'vue'
 const blogList = ref([])
 
