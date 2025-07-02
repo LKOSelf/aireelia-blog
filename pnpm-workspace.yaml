@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - better-sqlite3
+  - esbuild
+  - vue-demi
+
+onlyBuiltDependencies:
+  - better-sqlite3

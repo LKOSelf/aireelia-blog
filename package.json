@@ -1,6 +1,6 @@
 {
   "name": "aireelia-blog",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,20 +14,23 @@
   "dependencies": {
     "@devui-design/icons": "^1.4.0",
     "animate.css": "^4.1.1",
+    "better-sqlite3": "^12.2.0",
     "devui-theme": "^0.0.7",
     "gray-matter": "^4.0.3",
-    "pinia": "^3.0.1",
-    "vue": "^3.5.13",
-    "vue-devui": "^1.6.32",
-    "vue-router": "^4.5.0"
+    "mysql2": "^3.14.1",
+    "node-gyp": "^11.2.0",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17",
+    "vue-devui": "^1.6.33",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitejs/plugin-vue": "^5.2.4",
     "@vue/test-utils": "^2.4.6",
-    "jsdom": "^26.0.0",
+    "jsdom": "^26.1.0",
     "sass-embedded": "^1.89.2",
     "vite": "^6.3.5",
-    "vite-plugin-vue-devtools": "^7.7.2",
-    "vitest": "^3.1.1"
+    "vite-plugin-vue-devtools": "^7.7.7",
+    "vitest": "^3.2.4"
   }
 }

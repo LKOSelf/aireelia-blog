@@ -11,12 +11,14 @@
     ]
   },
   "test2": {
-    "title": "test2",
-    "description": "该文章没有简介",
-    "author": "匿名",
+    "title": "Test",
+    "description": "Test",
+    "author": "TEST",
     "date": "2025-07-02",
     "tags": [
-      "markdown"
+      "苹果",
+      "香蕉",
+      "橙子"
     ]
   }
 }
