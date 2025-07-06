@@ -18,13 +18,14 @@
     </d-menu-item>
     <d-menu-item key="/note"> 
       <template #icon>
-        <i class="icon-edit-3"></i>
+        <i class="icon-book"></i>
+        
       </template>
-      笔记
+      知识库
     </d-menu-item>
     <d-menu-item key="/blog"> 
       <template #icon>
-        <i class="icon-book"></i>
+        <i class="icon-edit-3"></i>
       </template>
       博客
     </d-menu-item>

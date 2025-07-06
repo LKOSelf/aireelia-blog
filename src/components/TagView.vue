@@ -4,7 +4,7 @@
       <h1>标签</h1>
     </d-col>
     <d-col>
-      <span v-for="tag in blogList.tags" :key="tag">{{ tag }}</span>
+      <span v-for="tag in tagList" :key="tag">{{ tag.tags }}</span>
     </d-col>
   </d-row>
 
@@ -12,10 +12,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const blogList = ref([])
+const tagList = ref([])
 
 onMounted(async () => {
-  const res = await fetch('/src/data/blogList.json')
-  blogList.value = await res.json()
+  const res = await fetch('/src/data/blogInfo.json')
+  tagList.value = await res.json()
 })
+console.log(tagList)
 </script>

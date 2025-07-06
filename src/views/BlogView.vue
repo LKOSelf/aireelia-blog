@@ -26,7 +26,7 @@ import { ref, onMounted } from 'vue'
 const blogList = ref([])
 
 onMounted(async () => {
-  const res = await fetch('/src/data/blogList.json')
+  const res = await fetch('/src/data/blogInfo.json')
   blogList.value = await res.json()
 })
 </script>
