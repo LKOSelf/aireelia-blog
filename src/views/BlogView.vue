@@ -32,12 +32,11 @@ onMounted(async () => {
 </script>
 <style scoped>
  .info{
-  display: flex;
+   display: flex;
    flex-direction: row-reverse; 
-   border-bottom:1px dashed #2f2f2b;
-   position: relative;
-   top: 45%;
-   span {
+   border-bottom:1px dashed #2f2f2b;  
+   padding-top: calc(50px + 1px); 
+   span { 
      margin-left: 10px;
    }
  }
@@ -56,8 +55,8 @@ img{
 }
 
 .tag{
-position: relative;
-top: 50%;
+/* position: relative;
+top: 50%; */
 margin-left: 5px;
 opacity: 0.5;
 }
