@@ -13,20 +13,17 @@ export class Dir {
     
     // 跳两级到祖父目录
     static grandParentDir = path.dirname(Dir.parentDir);
-    
-    static blogDir = path.join(Dir.grandParentDir, 'assets', 'blog');
-    
-    static get outputPath() {
-        return path.join(Dir.grandParentDir, 'data', `blogInfo.json`);
-    }
 }
 
-
+export function generateBlogInfo() {
 
 // 读取目录内容并写入json（去除扩展名）
-try {
+
+    const blogDir = path.join(Dir.grandParentDir, 'assets', 'blog');
+    const outputPath = path.join(Dir.grandParentDir, 'data', `blogInfo.json`);
+
     // 读取目录内容
-    const files = fs.readdirSync(Dir.blogDir);
+    const files = fs.readdirSync(blogDir);
     const names = files.map(f => path.parse(f).name);
 
     // 写入数据
@@ -34,21 +31,31 @@ try {
     for (const name of names) {
         console.log(`Processing ${name}.md...`);
         // 读取每个文件yaml头部
-        const content = fs.readFileSync(`${Dir.blogDir}/${name}.md`, 'utf8');
+        const content = fs.readFileSync(`${blogDir}/${name}.md`, 'utf8');
         const md = matter(content)
         data[name] = {
-            title: md.data.title || name, // 如果没有title，则使用文件名
-            description: md.data.description || '该文章没有简介', 
-            author: md.data.author || '匿名', // 如果没有author，则使用匿名
-            date: new Date().toISOString().split('T')[0], 
-            tags: md.data.tags || ["markdown"], // 如果没有tags，则使用空数组
+            title: md.data.title || name,
+            description: md.data.description || '该文章没有简介',
+            author: md.data.author || '匿名',
+            date: new Date().toISOString().split('T')[0],
+            tags: md.data.tags || ["markdown"],
         }
-        fs.writeFileSync(Dir.blogDir + '/' + name + '.md', updatedContent);
-         // 写入json
-        fs.writeFileSync(Dir.outputPath, JSON.stringify(data, null, 2), {encoding:'utf-8', flag:'w'});
-        console.log('List.json generated!');
-        // console.log(data)
+
+    }
+    // 写入json
+    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), {encoding:'utf-8', flag:'w'});
+    console.log('List.json generated!');
+}
+
+export function generateNoteInfo() {
+    const file = fs.readdirSync(`${Dir.grandParentDir}/assets/note`)
+    console.log(file)
+    const outputPath = path.join(Dir.grandParentDir, 'data', `noteInfo.json`);
+    let data = {};
+    for(const name of file){
+        data[name] = {
+            dirname: name,
         }
-    } catch (err) {
-        console.error('Error reading directory:', err);
-    }           
+    }
+    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), {encoding:'utf-8', flag:'w'});
+}

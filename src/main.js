@@ -22,3 +22,4 @@ app.use(router)
 app.use(DevUI)
 
 app.mount('#app')
+

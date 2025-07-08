@@ -50,18 +50,29 @@
   }
 }
 
-.card-large {
-  box-shadow: $devui-shadow-length-feedback-overlay $devui-feedback-overlay-shadow;
-}
+.card-note{
+  margin: 0px 20px;
+  display: flex;
+  height: 200px;
+  width: 150px;
+  padding: 0px !important;
+  border: 2px solid transparent; 
+  transition: border-color 0.3s, height 0.3s, width 0.3s; 
 
-.card-full {
-  border-radius: $devui-border-radius-full;
-}
+  &:hover {
+    height: 204px;
+    width: 154px;
+    border-color: #5e5e5e; 
+  }
 
-.shadow {
-  box-shadow: $devui-shadow-length-base;
-}
-
-.shadow-left {
-  box-shadow: $devui-shadow-length-slide-left $devui-shadow;
+  h4{
+    position: relative;
+    bottom: 25px;
+    text-align: center;
+    margin: 0px;
+  }
+  img{
+    border-radius: 5px ;
+    z-index: -1;
+  }
 }
