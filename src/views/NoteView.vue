@@ -3,13 +3,20 @@
         <d-col :span="24">
         <d-tabs v-model="id">
         <d-tab id="tab1" title="📝笔记">
-            <p>Tab1 Content</p>
+            <div style="display: flex;">
+            <d-card class="card-note" v-for="item in noteDir" :key="item" 
+              @click="goDetail(item.dirname)"
+                style="cursor:pointer">
+                <img src="../assets/1299626.jpg" alt="" height="200px" width="150px" />
+                <h4>{{ item.dirname }}</h4>
+            </d-card>
+            </div>
             </d-tab>
             <d-tab id="tab2" title="📕书籍">
             <p>Tab2 Content</p>
             </d-tab>
             <d-tab id="tab3" title="🤔思维导图">
-            <d-card class="card-note">
+            <d-card class="card-note" v-for="item in noteDir" :key="item">
                 <img src="../assets/1299626.jpg" alt="" height="200px" width="150px" />
                 <h4>title</h4>
             </d-card>
@@ -19,11 +26,24 @@
     </d-row>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref,onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
+
+const noteDir = ref([]); 
+onMounted(async () => {
+  const res = await fetch('/src/data/noteInfo.json')
+  noteDir.value = await res.json()
+})
+console.log(noteDir.value);
 // 默认显示tab1
 const id = ref('tab1');
 
+// 跳转到详情页
+function goDetail(dirname) {
+  router.push({ name: 'NoteDetail', params: { dirname } })
+}
 </script>
 <style scoped>
     .bg{

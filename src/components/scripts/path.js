@@ -2,6 +2,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
+import { title } from 'process';
 
 export class Dir {
     // 获取当前文件的绝对路径
@@ -29,7 +30,6 @@ export function generateBlogInfo() {
     // 写入数据
     let data = {};
     for (const name of names) {
-        console.log(`Processing ${name}.md...`);
         // 读取每个文件yaml头部
         const content = fs.readFileSync(`${blogDir}/${name}.md`, 'utf8');
         const md = matter(content)
@@ -48,14 +48,33 @@ export function generateBlogInfo() {
 }
 
 export function generateNoteInfo() {
-    const file = fs.readdirSync(`${Dir.grandParentDir}/assets/note`)
-    console.log(file)
+    const file = fs.readdirSync(`${Dir.grandParentDir}/assets/note`).filter(name => !name.startsWith('.'));
     const outputPath = path.join(Dir.grandParentDir, 'data', `noteInfo.json`);
     let data = {};
     for(const name of file){
         data[name] = {
             dirname: name,
+            img_path: `assets/note/sampul/${name}.webp`,
         }
     }
     fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), {encoding:'utf-8', flag:'w'});
+    console.log('noteInfo.json generated!');
+}
+
+export function markdownInfo(){
+    const fileDir = fs.readdirSync(`${Dir.grandParentDir}/assets/note`).filter(name => !name.startsWith('.'));
+    let data = {};
+    for (const file of fileDir) {
+        // 读取每个子目录
+        const mdPath = fs.readdirSync(`${Dir.grandParentDir}/assets/note/${file}`)
+        for (const md of mdPath) {
+            data[file] = {
+                parent: file,
+                name: path.parse(md).name,
+                path: `${file}/${md}`,
+            }  
+        }
+        fs.writeFileSync(`${Dir.grandParentDir}/data/markdownInfo.json`, JSON.stringify(data, null, 2), {encoding:'utf-8', flag:'w'});
+    }
+    console.log('markdownInfo.json generated!');
 }
